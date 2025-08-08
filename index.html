@@ -27,42 +27,20 @@
         }
 
         button {
-            background: #ff6f61;
+            background: #ff6f62;
             border: none;
             padding: 15px 30px;
             font-size: 1.2rem;
             border-radius: 50px;
             color: white;
             cursor: pointer;
-            transition: 0.3s ease;
+            transition: 0.2s ease;
             box-shadow: 0 5px 15px rgba(255, 111, 97, 0.4);
             position: relative;
-            z-index: 10;
         }
 
         button:hover {
             background: #e85a4f;
-            transform: scale(1.05) rotate(2deg);
-        }
-
-        /* Floating Rakhi GIFs */
-        .rakhi {
-            position: absolute;
-            width: 80px;
-            animation: float 6s infinite ease-in-out;
-            opacity: 0.8;
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0) rotate(0);
-            }
-
-            50% {
-                transform: translateY(-20px) rotate(10deg);
-            }
         }
     </style>
 </head>
@@ -72,17 +50,36 @@
     <h1>🌸 Happy Raksha Bandhan 🌸</h1>
     <p>Dear Sister, you’re my partner in crime, my best friend, and my forever supporter 💖</p>
 
-    <button onclick="startLoading()">Click for a Surprise 🎁</button>
-
-    <!-- Floating Rakhis -->
-    <img src="https://i.ibb.co/TPwN3cd/rakhi.png" class="rakhi" style="top: 15%; left: 10%;">
-    <img src="https://i.ibb.co/TPwN3cd/rakhi.png" class="rakhi" style="top: 70%; right: 15%; animation-delay: 1s;">
+    <button id="surpriseBtn" onclick="startLoading()">Click for a Surprise 🎁</button>
 
     <script>
+        let escapeCount = 0;
+        const button = document.getElementById('surpriseBtn');
+
+        // Function to move button randomly
+        function moveButton() {
+            const maxX = window.innerWidth - button.offsetWidth - 20;
+            const maxY = window.innerHeight - button.offsetHeight - 20;
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+
+            button.style.position = "absolute";
+            button.style.left = randomX + "px";
+            button.style.top = randomY + "px";
+        }
+
+        // When mouse enters button
+        button.addEventListener('mouseenter', () => {
+            if (escapeCount < 3) {
+                moveButton();
+                escapeCount++;
+            }
+        });
+
+        // Loading effect before going to wish page
         function startLoading() {
-            let btn = document.querySelector('button');
-            btn.innerText = "Wrapping your gift 🎀...";
-            btn.disabled = true;
+            button.innerText = "Wrapping your gift 🎀...";
+            button.disabled = true;
             setTimeout(() => {
                 window.location.href = 'wish.html';
             }, 2000);
