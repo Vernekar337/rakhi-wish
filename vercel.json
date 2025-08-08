@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/wish", "destination": "/wish.html" }
+  ]
+}

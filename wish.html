@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raksha Bandhan Surprise</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      text-align: center;
+      padding: 50px;
+      color: #fff;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 5px #c94f7c;
+    }
+
+    p {
+      font-size: 1.3rem;
+      margin-top: 20px;
+      color: #fffbe0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>🎉 Surprise, Sis! 🎉</h1>
+  <p>🎀 Happy Rakhi! May your life be as colorful as our childhood fights and as sweet as the chocolates you never
+    shared with me! 😂❤️</p>
+
+  <!-- Confetti Script -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    // Shoot confetti when page loads
+    setTimeout(() => {
+      confetti({
+        particleCount: 200,
+        spread: 100,
+        origin: {
+          y: 0.6
+        }
+      });
+    }, 500);
+
+    // Continuous falling confetti
+    setInterval(() => {
+      confetti({
+        particleCount: 50,
+        spread: 70,
+        origin: {
+          y: 0
+        }
+      });
+    }, 1000);
+  </script>
+
+</body>
+
+</html>
