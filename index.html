@@ -12,6 +12,7 @@
             text-align: center;
             padding: 50px;
             color: #fff;
+            overflow: hidden;
         }
 
         h1 {
@@ -35,11 +36,33 @@
             cursor: pointer;
             transition: 0.3s ease;
             box-shadow: 0 5px 15px rgba(255, 111, 97, 0.4);
+            position: relative;
+            z-index: 10;
         }
 
         button:hover {
             background: #e85a4f;
-            transform: scale(1.05);
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        /* Floating Rakhi GIFs */
+        .rakhi {
+            position: absolute;
+            width: 80px;
+            animation: float 6s infinite ease-in-out;
+            opacity: 0.8;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+            }
         }
     </style>
 </head>
@@ -49,8 +72,22 @@
     <h1>🌸 Happy Raksha Bandhan 🌸</h1>
     <p>Dear Sister, you’re my partner in crime, my best friend, and my forever supporter 💖</p>
 
-    <button onclick="window.location.href='/wish'">Click for a Surprise 🎁</button>
+    <button onclick="startLoading()">Click for a Surprise 🎁</button>
 
+    <!-- Floating Rakhis -->
+    <img src="https://i.ibb.co/TPwN3cd/rakhi.png" class="rakhi" style="top: 15%; left: 10%;">
+    <img src="https://i.ibb.co/TPwN3cd/rakhi.png" class="rakhi" style="top: 70%; right: 15%; animation-delay: 1s;">
+
+    <script>
+        function startLoading() {
+            let btn = document.querySelector('button');
+            btn.innerText = "Wrapping your gift 🎀...";
+            btn.disabled = true;
+            setTimeout(() => {
+                window.location.href = 'wish.html';
+            }, 2000);
+        }
+    </script>
 
 </body>
 
