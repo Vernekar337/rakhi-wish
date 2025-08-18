@@ -1,119 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Raksha Bandhan Surprise</title>
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raksha Bandhan Surprise</title>
+<style>
     body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-      text-align: center;
-      padding: 50px;
-      color: #fff;
-      overflow: hidden;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+        text-align: center;
+        padding: 50px;
+        color: #fff;
+        overflow: hidden;
     }
 
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 5px #c94f7c;
-      animation: bounceIn 1s ease forwards;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 5px #c94f7c;
+        animation: bounceIn 1s ease forwards;
     }
 
     p {
-      font-size: 1.3rem;
-      margin-top: 20px;
-      color: #fffbe0;
-      animation: fadeInUp 1.5s ease forwards;
+        font-size: 1.3rem;
+        margin-top: 20px;
+        color: #fffbe0;
+        animation: fadeInUp 1.5s ease forwards;
     }
 
     .fact {
-      font-size: 1rem;
-      margin-top: 30px;
-      color: #fff;
-      opacity: 0.8;
+        font-size: 1rem;
+        margin-top: 30px;
+        color: #fff;
+        opacity: 0.8;
     }
 
     @keyframes bounceIn {
-      0% {
-        transform: scale(0.3);
-        opacity: 0;
-      }
-
-      50% {
-        transform: scale(1.1);
-        opacity: 1;
-      }
-
-      70% {
-        transform: scale(0.9);
-      }
-
-      100% {
-        transform: scale(1);
-      }
+        0% { transform: scale(0.3); opacity: 0; }
+        50% { transform: scale(1.1); opacity: 1; }
+        70% { transform: scale(0.9); }
+        100% { transform: scale(1); }
     }
 
     @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+        0% { opacity: 0; transform: translateY(30px); }
+        100% { opacity: 1; transform: translateY(0); }
     }
-  </style>
+</style>
 </head>
-
 <body>
 
-  <h1>🎉 Surprise, Sis! 🎉</h1>
-  <p>🎀 Happy Rakhi! May your life be as colorful as our childhood fights and as sweet as the chocolates you never
-    shared with me! 😂❤️</p>
-  <div class="fact" id="funFact"></div>
+<h1>🎉 Surprise, Sis! 🎉</h1>
+<p>🎀 Happy Rakhi! May your life be as colorful as our childhood fights and as sweet as the chocolates you never shared with me! 😂❤️</p>
+<div class="fact" id="funFact"></div>
 
-  <!-- Confetti Script -->
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <script>
-    // Fun facts list
+<!-- Confetti Script -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
     const facts = [
-      "Sibling Fact: I was always the smarter one 😜",
-      "Sibling Fact: You still owe me chocolates 🍫",
-      "Sibling Fact: I’m your free lifelong bodyguard 💪",
-      "Sibling Fact: I let you win at games... sometimes 🎮"
+        "Sibling Fact: I was always the smarter one 😜",
+        "Sibling Fact: You still owe me chocolates 🍫",
+        "Sibling Fact: I’m your free lifelong bodyguard 💪",
+        "Sibling Fact: I let you win at games... sometimes 🎮"
     ];
 
-    // Show random fun fact
     document.getElementById("funFact").innerText = facts[Math.floor(Math.random() * facts.length)];
 
-    // Confetti burst
     setTimeout(() => {
-      confetti({
-        particleCount: 200,
-        spread: 100,
-        origin: {
-          y: 0.6
-        }
-      });
+        confetti({ particleCount: 200, spread: 100, origin: { y: 0.6 } });
     }, 500);
 
-    // Continuous confetti
     setInterval(() => {
-      confetti({
-        particleCount: 50,
-        spread: 70,
-        origin: {
-          y: 0
-        }
-      });
+        confetti({ particleCount: 50, spread: 70, origin: { y: 0 } });
     }, 1000);
-  </script>
+</script>
 
 </body>
-
 </html>
